@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Us</title>
+  <link rel="icon" type="image" href="Image/favicon.ico">
+   <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body{
+      font-family: 'Times New Roman', Times, serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px 60px;
+            background:linear-gradient(to right,#022c22,#064e3b,#065f46);
+            position:sticky;
+            top:0;
+            z-index:1000;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .logo-container{
+            display:flex;
+            align-items:center;
+            gap:12px;
+        }
+
+        .logo-image{
+            width:50px;
+            height:50px;
+            border-radius:50%;
+            transition:0.3s;
+        }
+
+        .logo-image:hover{
+            transform:scale(1.1) rotate(5deg);
+        }
+
+        .logo{
+            color:white;
+            font-size:28px;
+            font-weight:bold;
+            transition:0.3s;
+            cursor:pointer;
+        }
+
+        .logo:hover{
+            transform:scale(1.1);
+            color:#6ee7b7;
+            text-shadow:0 0 15px rgba(110,231,183,0.8);
+        }
+
+        .nav-links{
+            display:flex;
+            gap:25px;
+            list-style:none;
+        }
+
+        .nav-links a{
+            display:inline-block;
+            text-decoration:none;
+            color:white;
+            font-weight:bold;
+            position:relative;
+            transition:0.3s;
+        }
+
+        .nav-links a::after{
+            content:"";
+            position:absolute;
+            left:0;
+            bottom:-5px;
+            width:0%;
+            height:2px;
+            background:#6ee7b7;
+            transition:0.3s;
+        }
+
+        .nav-links a:hover::after{
+            width:100%;
+        }
+
+        .nav-links a:hover{
+            color:#6ee7b7;
+            transform:translateY(-3px) scale(1.08);
+        }
+
+        .buttons a{
+            display:inline-block;
+            text-decoration:none;
+            background:white;
+            color:#065f46;
+            padding:10px 18px;
+            border-radius:25px;
+            margin-left:10px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .buttons a:hover{
+            background:#6ee7b7;
+            transform:scale(1.1);
+            box-shadow:0 0 15px rgba(110,231,183,0.7);
+        }
+
+        #menu-toggle{
+            display:none;
+        }
+
+        .menu-icon{
+            display:none;
+            color:white;
+            font-size:30px;
+            cursor:pointer;
+        }
+    .container{
+      width: 80%;
+      margin: auto;
+      text-align: center;
+      padding-top: 40px;
+    }
+
+    h1{
+      font-size: 50px;
+    }
+
+    p{
+      font-size: 20px;
+    }
+
+    .form-box{
+      margin-top: 30px;
+    }
+    textarea{
+    width: 70%;
+    height: 150px;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: none;
+    background-color: lightgray;
+    font-size: 16px;
+}
+
+    input{
+      width: 35%;
+      padding: 15px;
+      margin: 10px;
+      border: none;
+      border-radius: 25px;
+      background-color: #d9d9d9;
+      font-size: 16px;
+    }
+
+    button{
+      width: 75%;
+      padding: 15px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 30px;
+      background-color: #80EF80;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .info-box{
+      background-color: white;
+      width: 90%;
+      margin: 80px auto;
+      padding: 40px;
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      box-shadow: 0px 0px 10px gray;
+    }
+
+    .box{
+      width: 30%;
+    }
+
+    .icon{
+      width: 90px;
+      height: 90px;
+      background-color:#50C878 ;
+      border-radius: 50%;
+      margin: auto;
+      color: white;
+      font-size: 40px;
+      line-height: 90px;
+    }
+
+    h2{
+      margin-top: 20px;
+    }
+    footer{
+            background:linear-gradient(to right,#022c22,#064e3b,#065f46);
+            color:white;
+            padding:60px 40px 20px;
+        }
+
+        .footer-container{
+            display:flex;
+            justify-content:space-between;
+            gap:40px;
+            margin-bottom:40px;
+            flex-wrap:wrap;
+        }
+
+        .footer-column{
+            flex:1;
+            min-width:250px;
+        }
+
+        .footer-column h3{
+            margin-bottom:18px;
+            color:#6ee7b7;
+            font-size:24px;
+        }
+
+        .footer-column p{
+            margin:10px 0;
+            line-height:28px;
+        }
+
+        .footer-column a{
+            display:block;
+            color:white;
+            text-decoration:none;
+            margin:10px 0;
+            transition:0.3s;
+        }
+
+        .footer-column a:hover{
+            color:#6ee7b7;
+            transform:translateX(5px);
+        }
+
+        .social-icons a{
+            display:inline-flex;
+            justify-content:center;
+            align-items:center;
+            width:55px;
+            height:55px;
+            background:white;
+            color:#065f46;
+            border-radius:50%;
+            margin-right:12px;
+            font-size:22px;
+            transition:0.4s;
+        }
+
+        .social-icons a:hover{
+            background:rgb(0, 0, 0);
+            transform:translateY(-6px) scale(1.1);
+            box-shadow:0 0 20px rgba(110,231,183,0.7);
+        }
+
+        .footer-bottom{
+            text-align:center;
+            border-top:1px solid rgba(255,255,255,0.3);
+            padding-top:20px;
+        }
+
+        @media(max-width:900px){
+
+            .menu-icon{
+                display:block;
+            }
+
+            .nav-links{
+                display:none;
+                flex-direction:column;
+                position:absolute;
+                top:90px;
+                left:0;
+                width:100%;
+                background:#064e3b;
+                text-align:center;
+                padding:25px 0;
+            }
+
+            .nav-links li{
+                margin:15px 0;
+            }
+
+            #menu-toggle:checked + .menu-icon + .nav-links{
+                display:flex;
+            }
+
+            .buttons{
+                display:none;
+            }
+
+            .hero-content h1{
+                font-size:45px;
+            }
+
+            .transport-section,
+            .benefits{
+                padding:50px 20px;
+            }
+
+            .intro{
+                padding:35px 25px;
+            }
+
+            .navbar{
+                padding:20px 25px;
+            }
+        }
+  </style>
+</head>
+
+<body>
+<header class="navbar">
+        <div class="logo-container">
+            <img src="Image/rllg.png" alt="Logo" class="logo-image">
+            <div class="logo">Smart Mobility</div>
+        </div>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact us.html">Contact Us</a></li>
+            <li><a href="Eco_transport.html">Eco Transport</a></li>
+            <li><a href="raiseawareness.html">Raise Awareness</a></li>
+            <li><a href="references.html">References</a></li>
+        </ul>
+        <div class="buttons">
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </div>
+    </header>
+  <div class="container">
+
+    <h1>Contact Us</h1>
+
+    <p>Welcome to our contact page.Feel free to send us a message anytime and we will
+        reply as soon as possible.
+    </p>
+
+    <div class="form-box">
+      <input type="text" placeholder="Enter your Name">
+      <input type="email" placeholder="Enter a email address">
+      <div class="form-box">
+    <textarea placeholder="Type your message here..."></textarea>
+    <br>
+    <button>Send Message</button>
+</div>
+      <br>
+
+      
+    </div>
+
+  </div>
+
+  <div class="info-box">
+
+    <div class="box">
+      <div class="icon">✉️</div>
+      <h2>Email</h2>
+      <p>myatlinthant615@gmail.com</p>
+    </div>
+
+    <div class="box">
+      <div class="icon">📞</div>
+      <h2>Phone </h2>
+      <p>09790457910</p>
+    </div>
+
+    <div class="box">
+      <div class="icon">📍</div>
+      <h2>Address</h2>
+      <p> Maubin</p>
+   </div>
+  </div>
+ <footer>
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>Contact</h3>
+            <p>Email: greenlight@gmail.com</p>
+            <p>Phone: 09-123456789</p>
+        </div>
+
+        <div class="footer-column">
+
+            <h3>Quick Links</h3>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a></li>
+        <a href="contact us.html">Contact Us</a>
+        <a href="Eco_transport.css">Eco Transport</a>
+        <a href="raiseawareness.html">Raiseawareness</a></li>
+        <a href="references.html">References</a>
+
+        </div>
+
+        <div class="footer-column">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Green Light Society | All Rights Reserved</p>
+    </div>
+</footer>
+</body>
+</html>
+</body>
+</html>
